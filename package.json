@@ -1,0 +1,9 @@
+{
+  "name": "tjt-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "server": "http-server -S -C .dev/127.0.0.1.pem -K .dev/127.0.0.1-key.pem"
+  }
+}

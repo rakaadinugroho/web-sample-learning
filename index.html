@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheJakartaTimes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body class="main-container">
+  <header>
+    <div class="title-header">
+      <h1>The Jakarta Times</h1>
+      <p>Semua tentang jakarta, Media paling terbaru dan kredibel</p>
+    </div>
+
+    <label for="switch" hidden="hidden">Darkmode</label><input type="checkbox" id="switch" name="theme" />
+  </header>
+
+  <div class="menu-button" onclick="toggleMainMenu()">- Menu</div>
+  <nav>
+    <a href="#">Trending</a>
+    <a href="#">Politik</a>
+    <a href="#">Bisnis</a>
+    <a href="#">Otomotif</a>
+    <a href="#">Sains & Teknologi</a>
+  </nav>
+
+  <section class="main-section">
+    <div class="main-content">
+    </div>
+
+    <div class="sidebar">
+      <h3>Hashtag Populer</h3>
+      <ul>
+        <li><a href="#">#Pemilu2024</a></li>
+        <li><a href="#">#Indonesia78</a></li>
+        <li><a href="#">#PolusiUdara</a></li>
+        <li><a href="#">#SurveyCapres</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>&copy; 2023 - TheJakartaTimes</footer>
+  <script src="main.js" type="application/javascript"></script>
+</body>
+</html>

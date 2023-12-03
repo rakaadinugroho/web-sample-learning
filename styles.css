@@ -1,0 +1,213 @@
+html {
+    font-family: "Montserrat", sans-serif;
+
+    --bg: #fcfcfc;
+    --bg-panel: #ebebeb;
+    --color-heading: #0077ff;
+    --color-text: #333333;
+}
+
+html[data-theme="dark"] {
+    --bg: #333333;
+    --bg-panel: #434343;
+    --color-heading: #0077ff;
+    --color-text: #b5b5b5;
+}
+
+body {
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--bg-panel);
+    color: var(--color-heading);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.title-header {
+    padding-left: 16px;
+}
+
+h3 {
+    color: var(--color-heading);
+}
+
+nav {
+    background-color: dimgrey;
+    color: #dddddd;
+    padding: 10px;
+}
+
+nav a {
+    background-color: dimgrey;
+    color: #ffffff;
+    padding: 4px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #ffffff;
+    color: dimgrey;
+}
+
+article {
+    margin-top: 32px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dddddd;
+    color: var(--color-text);
+}
+
+footer {
+    text-align: center;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex: 3 !important;
+}
+.sidebar {
+    flex: 1;
+    padding: 15px;
+}
+
+/*For Desktop*/
+@media (min-width: 601px) {
+    .menu-button {
+        display: none;
+    }
+}
+
+/*For Mobile*/
+@media (max-width: 600px) {
+    .main-section {
+        flex-direction: column;
+    }
+
+    .menu-button {
+        position: fixed;
+        top: 0;
+        background-color: ghostwhite;
+        padding: 10px;
+        color: black;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        padding: 50px 0;
+        left: -200px;
+        width: 200px;
+        height: 100%;
+        transition: left 0.4ms;
+    }
+
+    body.menu-open nav {
+        left: 0;
+    }
+
+    nav a {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+span.meta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.play-button {
+    background-color: var(--bg-panel); /* Button background color */
+    color: var(--color-text); /* Button text color */
+    border: none;
+    padding: 5px 10px; /* Adjusted padding for a smaller button */
+    font-size: 12px; /* Adjusted font size for a smaller button */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Play icon */
+.play-button::before {
+    content: '\25B6'; /* Unicode character for the play icon */
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+/* Hover effect for the play button */
+.play-button:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}
+
+/* Styling for the played state */
+.play-button.played {
+    background-color: var(--color-text); /* Change background color for played state */
+    color: var(--bg-panel); /* Change text color for played state */
+}
+
+/* Played icon */
+.play-button.played::before {
+    content: '\2713'; /* Unicode character for a checkmark or your played state icon */
+}
+
+/* Style for the hashtag links */
+.sidebar ul li a {
+    display: block;
+    padding: 8px;
+    color: #3498db; /* Text color for the links */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition effect for the text color */
+}
+
+header input[type="checkbox"] {
+    appearance: none; /* Remove default checkbox appearance */
+    width: 40px; /* Width of the switcher */
+    height: 20px; /* Height of the switcher */
+    background-color: var(--bg); /* Background color for the switcher */
+    border-radius: 10px; /* Rounded corners for the switcher */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Style for the dark mode switcher slider */
+header input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px; /* Width of the slider */
+    height: 18px; /* Height of the slider */
+    background-color: var(--bg-panel); /* Color of the slider */
+    border-radius: 50%; /* Rounded corners for the slider */
+    left: 2px; /* Initial position of the slider */
+    transition: 0.3s; /* Transition effect for the slider */
+}
+
+/* Style for the dark mode switcher when checked */
+header input[type="checkbox"]:checked::before {
+    left: calc(100% - 20px); /* Move the slider to the right when checked */
+}
+
+.article-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text);
+}
